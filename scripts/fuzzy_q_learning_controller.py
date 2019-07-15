@@ -63,27 +63,6 @@ def callback(franka_msg):
         start_time = time.time()
     end_time = time.time()
 
-    joint0_speed = franka_msg.joint_speed[0]
-    joint0_external_tau = franka_msg.joint_tau[0] - franka_msg.joint_initial_tau[0] \
-                              - franka_msg.joint_coriolis[0] - franka_msg.joint_gravity[0]
-    joint0_jerk = franka_msg.joint_jerk[0]
-
-def callback(franka_msg):
-    global count
-    global reward_list
-    global reward_sum
-    global iter_num
-    global action
-    global time_count
-    global start_time
-    global end_time
-    global episode_count
-    global f1, f2, f3, f4
-
-    if time_count == 0:
-        start_time = time.time()
-    end_time = time.time()
-
     if (end_time - start_time < episode_time):
         time_count += 1
 
